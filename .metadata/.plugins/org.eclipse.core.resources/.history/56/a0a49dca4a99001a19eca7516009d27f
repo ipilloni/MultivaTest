@@ -1,0 +1,11 @@
+package com.example.demo;
+
+import org.springframework.boot.context.properties.*;
+import org.springframework.stereotype.*;
+
+@ConfigurationProperties(prefix="spring.boot.config.example")
+@Component
+
+public class Configuration {
+
+}

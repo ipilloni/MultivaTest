@@ -1,0 +1,43 @@
+package com.example.demo;
+
+import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Controller;
+
+import com.vasco.utils.AAL2Wrap;
+import com.vasco.utils.KernelParms;
+import com.vasco.utils.response.RespDPXGetTokenBlobsEx;
+
+@SpringBootApplication
+public class CargaDpxApplication implements CommandLineRunner {
+		
+	@Autowired
+	Configuration config;
+		public static void main(String[] args) throws SQLException, ClassNotFoundException {
+		SpringApplication.run(CargaDpxApplication.class, args);
+		
+ 
+	}
+ 
+		@Override
+		public void run(String...args) throws Exception {
+			System.out.println("hola" + config.getFile());
+	       
+		}
+
+		
+	
+	
+
+}

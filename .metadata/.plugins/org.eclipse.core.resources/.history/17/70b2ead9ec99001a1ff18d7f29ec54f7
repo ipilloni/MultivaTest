@@ -1,0 +1,50 @@
+package com.example.demo;
+
+import org.springframework.boot.context.properties.*;
+import org.springframework.stereotype.*;
+
+@ConfigurationProperties(prefix="multiva.properties.util")
+@Component
+public class MultivaConfiguration {
+	
+	private String file;
+	private String fkey;
+	private String test;
+	
+	public String getFile() { return file; }
+	public void setFile(String f) { file = f; }
+	
+	public String getfKey() { return fkey; }
+	public void setfKey(String k) { fkey = k; }
+	
+	public String getTest() { return test; }
+	public void setTest(String t) { test = t; }
+	
+private final DSClass dsClass = new DSClass();
+	
+	public DSClass getDSClass() {
+		return dsClass;
+	}
+	
+	@ConfigurationProperties(prefix="datasource")
+	public class DSClass {
+		
+		private String url;
+		private String username;
+		private String password;
+		private String driverClassName;
+		
+		public String getUrl() {return url;}
+		public void setUrl(String u) { url = u; }
+		
+		public String getUsername() {return username;}
+		public void setUsername(String s) { username = s; }
+		
+		public String getPassword() {return password;}
+		public void setPassword(String p) { password = p; }
+		
+		public String getDriverClassName() {return driverClassName;}
+		public void setDriverClassName(String d) { driverClassName = d; }
+	}
+
+}

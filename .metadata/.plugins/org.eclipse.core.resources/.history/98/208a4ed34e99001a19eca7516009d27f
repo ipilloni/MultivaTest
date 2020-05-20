@@ -1,0 +1,21 @@
+package com.example.demo;
+
+import org.springframework.boot.context.properties.*;
+import org.springframework.stereotype.*;
+
+@ConfigurationProperties(prefix="multiva.properties.util")
+@Component
+public class Configuration {
+	
+	private String file;
+	private String key;
+	private String test;
+	
+	public String getFile() { return file; }
+	public void setFile(String f) { file = f; }
+	public String getKey() { return key; }
+	public void setSuite(String k) { key = k; }
+	public String getTest() { return test; }
+	public void setTest(String t) { test = t; }
+
+}

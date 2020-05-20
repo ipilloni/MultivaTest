@@ -1,0 +1,11 @@
+
+# SQL Server LOCAL
+spring.datasource.url=jdbc:sqlserver://127.0.0.1:54994;databaseName=gapsidb
+spring.datasource.username=admin
+spring.datasource.password=admin123
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+
+multiva.properties.file= "C:\fuse\multiva\dpx\in\demo.dpx"
+multiva.properties.key = 11111111111111111111111
+multiva.properties.test= "hola mundo"

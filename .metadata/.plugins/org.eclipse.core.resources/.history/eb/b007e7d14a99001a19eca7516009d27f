@@ -1,0 +1,11 @@
+package com.example.demo;
+
+import org.springframework.boot.context.properties.*;
+import org.springframework.stereotype.*;
+
+@ConfigurationProperties(prefix="multiva.properties")
+@Component
+
+public class Configuration {
+
+}

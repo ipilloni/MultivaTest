@@ -1,0 +1,21 @@
+package com.example.demo;
+
+import org.springframework.boot.context.properties.*;
+import org.springframework.stereotype.*;
+
+@ConfigurationProperties(prefix="multiva.properties.util")
+@Component
+public class MultivaConfiguration {
+	
+	private String file;
+	private String fkey;
+	private String test;
+	
+	public String getFile() { return file; }
+	public void setFile(String f) { file = f; }
+	public String getKey() { return fkey; }
+	public void setfKey(String k) { fkey = k; }
+	public String getTest() { return test; }
+	public void setTest(String t) { test = t; }
+
+}

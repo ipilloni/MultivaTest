@@ -1,0 +1,15 @@
+package com.example.demo;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+
+@ConfigurationProperties("my-properties")
+public class Properties {
+	private String rFile;
+	private String key;
+	
+	public String getRfile() {
+		return rFile;
+	 
+	}
+	
+}

@@ -1,0 +1,36 @@
+package com.example.demo;
+
+import org.springframework.boot.context.properties.*;
+import org.springframework.stereotype.*;
+
+@ConfigurationProperties(prefix="multiva.properties.util")
+@Component
+public class MultivaConfiguration {
+	
+	private String file;
+	private String fkey;
+	private String test;
+	
+	public String getFile() { return file; }
+	public void setFile(String f) { file = f; }
+	
+	public String getfKey() { return fkey; }
+	public void setfKey(String k) { fkey = k; }
+	
+	public String getTest() { return test; }
+	public void setTest(String t) { test = t; }
+	
+	@ConfigurationProperties(prefix="datasource")
+	public class InnerClass {
+		private String property1;
+		private String property2;
+		private String property3;
+		public String getProperty1() {return property1;}
+		public void setProperty1(String p) { property1 = p; }
+		public String getProperty2() {return property2;}
+		public void setProperty2(String p) { property2 = p; }
+		public String getProperty3() {return property3;}
+		public void setProperty3(String p) { property3 = p; }
+	}
+
+}
