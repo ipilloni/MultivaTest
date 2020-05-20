@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,16 +22,19 @@ import com.vasco.utils.KernelParms;
 import com.vasco.utils.response.RespDPXGetTokenBlobsEx;
 
 @SpringBootApplication
+
 public class CargaDpxApplication implements CommandLineRunner {
-	@Autowired
-	DataSource dataSource;
+	//@Autowired
+	//DataSource dataSource;
 	@Autowired
 	MultivaConfiguration config;
+	
 		public static void main(String[] args) throws SQLException, ClassNotFoundException {
 		SpringApplication.run(CargaDpxApplication.class, args);
 	}
  
 		@Override
+		
 		public void run(String...args) throws Exception {
 			System.out.println(config.getFile());
 			System.out.println(config.getfKey());
@@ -154,14 +157,15 @@ public class CargaDpxApplication implements CommandLineRunner {
 	                 
 	                 String myActMsg1 = null;
 	                 String myActVector = myDB[0][4];
-	                 myActMsg1 = myVASCOWrapper.AAL2GenMessageActivation1(myMasterBlob.getBytes(), kernel, myChallenge, StaticVector, MessageVector, myActVector);
+	               //  myActMsg1 = myVASCOWrapper.AAL2GenMessageActivation1(myMasterBlob.getBytes(), kernel, myChallenge, StaticVector, MessageVector, myActVector);
 	                // String DeviceCode =  myVASCOWrapper.AAL2VerifyDeviceCode(arg0, arg1, arg2, arg3)
 	                   
-	                 myVASCOWrapper.AAL2DPXClose();
+	                 //myVASCOWrapper.AAL2DPXClose();
 	             }
 	        /*	
 	       } catch (SQLException e) {
 	        	System.out.println(e.getMessage());
+	        	myVASCOWrapper.AAL2DPXClose();
 			}
 	       */
 		}
